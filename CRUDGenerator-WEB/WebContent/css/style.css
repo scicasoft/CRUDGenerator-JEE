@@ -1,0 +1,200 @@
+body {
+	background-color: #3f4c6b;
+	width: 920px;
+	margin: auto;
+	color: #363636;
+	font-family: "Trebuchet MS", Verdana, Tahoma, sans-serif;
+	font-size: 15px;
+}
+
+.liste_users {
+	list-style: none;
+}
+
+#corps {
+	background-color: white;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	border: 1px solid #fefefe;
+	float: left;
+	width: 95%;
+	-webkit-box-shadow: 0px 0px 15px white;
+	-moz-box-shadow: 0px 0px 15px white;
+	-moz-border-radius: 10px 0 10px 0;
+	-webkit-border-radius: 10px 0 10px 0;
+}
+
+input[type='text'],input[type='password'],input[type='file'] {
+	/*width: 100%;*/
+	border: none;
+	background-color: #efefef;
+	border: 1px solid silver;
+	color: #842e1b;
+	padding: 5px;
+}
+
+.form_boutons {
+	text-align: right;
+}
+
+a.bouton {
+	padding-left: 30px;
+	padding-right: 30px;
+	cursor: url;
+}
+
+.bouton {
+	cursor: url;
+	width: 30%;
+	background-color: #cecece;
+	border: 1px solid silver;
+	color: #0131b4;
+	padding: 5px;
+	padding-left: 10px;
+	font-size: 30px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+textarea {
+	width: 100%;
+	border: none;
+	background-color: #efefef;
+	border: 1px solid silver;
+	color: #842e1b;
+	padding: 5px;
+}
+
+#chat_messages {
+	height: 350px;
+	background-color: #efefef;
+	border: 1px solid silver;
+	overflow: auto;
+	padding: 2px;
+}
+
+#chat_sender {
+	margin-top: 5px;
+}
+
+h1 {
+	color: #0131b4;
+	font-size: 35px;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+	color: #0131b4;
+	font-size: 25px;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+	color: #0131b4;
+	font-size: 15px;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+a {
+	text-decoration: none;
+	color: #0131b4;
+}
+
+a:hover {
+	text-width: bold;
+}
+
+#conteneur {
+	width: 920px;
+	margin: 0px auto;
+	padding: 10px 0px 10px 0px;
+	border: 1px solid;
+	overflow: auto;
+}
+
+#gauche {
+	width: 270px;
+	border: 1px solid silver;
+	float: left;
+	overflow: auto;
+	height: 500px;
+}
+
+#droite {
+	width: 585px;
+	float: right;
+	border: 1px solid silver;
+	padding: 5px;
+}
+
+#boutons {
+	height: 33px;
+	border: 1px solid silver;
+	width: 585px;
+	text-align: right;
+	float: right;
+}
+
+#entites {
+	margin-top: 10px;
+	width: 590px;
+	float: right;
+}
+
+#liste {
+	width: 200px;
+	float: left;
+	margin-left: 3px;
+}
+
+#gestion_entite {
+	width: 380px;
+	float: right;
+}
+
+#formulaire {
+	border: 1px solid;
+	width: 380px;
+	float: right;
+}
+
+#formulaire #bAttribut,#bGenerer {
+	text-align: right;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	float: right;
+}
+
+#formulaire #listeAttribut,#ajoutEntite,#ajoutAttribut,h1 {
+	padding: 10px;
+}
+
+.tableau_ligne:hover {
+	background-color: #F0F0F0
+}
+
+.tableau {
+	-webkit-box-shadow: 0 0 5px gray;
+	-moz-box-shadow: 0 0 5px gray;
+	margin-bottom: 10px
+}
+
+.tableau th {
+	height: 20px;
+	text-align: center;
+	background-color: #efefef;
+	color: #22427C;
+	text-shadow: 0 3px 3px rgba(0, 0, 0, .3);
+	font-weight: normal;
+	border-bottom: 1px solid #15928E
+}
+
+.tableau td {
+	height: 30px;
+	font-weight: normal;
+	border-bottom: 1px dotted #15928E
+}

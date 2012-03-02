@@ -1,0 +1,23 @@
+package defaultpackage.ejb;
+import java.util.List;
+
+import javax.ejb.Remote;
+
+import defaultpackage.entities.{{Entite}};
+
+@Remote
+public interface {{Entite}}Ejb {
+    void create({{Entite}} {{entite}});
+
+    void edit({{Entite}} {{entite}});
+
+    void remove({{Entite}} {{entite}});
+
+    {{Entite}} find(Object id);
+
+    List<{{Entite}}> getAll();
+
+    List<{{Entite}}> findRange(int[] range);
+
+    int count();
+}

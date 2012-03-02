@@ -1,0 +1,36 @@
+package defaultpackage.actions.{{entite}};
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import defaultpackage.ejb.{{Entite}}Ejb;
+import defaultpackage.entities.{{Entite}};
+import defaultpackage.utils.BeanLocator;
+
+public class Delete{{Entite}}Action extends Action {
+
+	@Override
+	public ActionForward execute(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		final int id = Integer.parseInt(request.getParameter("id"));
+
+		{{Entite}} {{entite}} = BeanLocator.defaultLookup({{Entite}}Ejb.class).find(
+				id);
+
+		BeanLocator.defaultLookup({{Entite}}Ejb.class).remove({{entite}});
+		List<{{Entite}}> list{{Entite}} = BeanLocator.defaultLookup({{Entite}}Ejb.class)
+				.getAll();
+		request.setAttribute("list{{Entite}}", list{{Entite}});
+
+		return mapping.findForward("list{{entite}}");
+	}
+
+}

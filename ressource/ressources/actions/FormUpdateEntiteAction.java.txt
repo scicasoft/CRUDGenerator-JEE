@@ -1,0 +1,30 @@
+package defaultpackage.actions.{{entite}};
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import defaultpackage.ejb.{{Entite}}Ejb;
+import defaultpackage.entities.{{Entite}};
+import defaultpackage.utils.BeanLocator;
+
+
+public class FormUpdate{{Entite}}Action extends Action {
+	@Override
+	public ActionForward execute(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		// Récupère les informations du formulaire
+		final int id = Integer.parseInt(request.getParameter("id"));
+		{{Entite}} {{entite}} = BeanLocator.defaultLookup({{Entite}}Ejb.class).find(
+				id);
+
+		request.setAttribute("{{entite}}", {{entite}});
+
+		return mapping.findForward("formUpdate{{entite}}");
+	}
+}

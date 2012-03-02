@@ -1,0 +1,40 @@
+package defaultpackage.entitiesForm.{{entite}};
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.*;
+
+import org.apache.struts.action.ActionErrors;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
+
+import defaultpackage.entities.{{Entite}};
+
+public class {{Entite}}Form extends ActionForm {
+    private static final long serialVersionUID = 1L;
+    
+{{DeclarationAttributsForm}}
+
+
+    public {{Entite}}Form() {
+    }
+
+	{{ConstructeurAvecIdForm}}
+
+{{GettersAndSetters}}
+
+	public {{Entite}} to{{Entite}}(){
+		{{Entite}} {{entite}} = new {{Entite}}() ;
+{{ConvertionEntite}}
+		return {{entite}};
+	}
+
+    @Override
+	public ActionErrors validate(ActionMapping mapping,
+			HttpServletRequest request) {
+		ActionErrors erreurs = new ActionErrors();
+
+		request.setAttribute("{{entite}}", this);
+		return erreurs;
+	}
+}

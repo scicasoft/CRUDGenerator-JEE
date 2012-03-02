@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<!-- ========== Formulaire ============================== -->
+	<form-beans>
+		<form-bean name="formProjet" type="scidy.form.ProjetForm" />
+		<form-bean name="formEntite" type="scidy.form.EntiteForm" />
+		<form-bean name="formAttribut" type="scidy.form.AttributForm" />
+	</form-beans>
+
+	<!-- ========== Mapping des actions ============================== -->
+	<action-mappings>
+		<action path="/Generer" type="scidy.actions.GenererAction"
+			scope="session" validate="false" attribute="bean" />
+
+		<action path="/Welcome" type="scidy.actions.HomeAction" scope="session"
+			validate="false" attribute="bean" />
+
+		<action path="/Login" type="scidy.actions.LoginAction" scope="session"
+			validate="false" attribute="bean" />
+
+		<action path="/Logout" type="scidy.actions.LogoutAction" scope="session"
+			validate="false" attribute="bean" />
+
+		<!-- Projet -->
+
+		<action path="/ListeDesProjets" type="scidy.actions.projets.Liste"
+			scope="session" />
+		<action path="/AjoutProjet" type="scidy.actions.projets.Ajout"
+			name="formProjet" />
+		<action path="/ModificationIntermediaireProjet" type="scidy.actions.projets.ModificationIntermediaire"
+			scope="session" input="/modifierProjet.jsp" name="formProjet" />
+		<action path="/ModificationProjet" type="scidy.actions.projets.Modification"
+			scope="session" name="formProjet" />
+		<action path="/SuppressionProjet" type="scidy.actions.projets.Suppression"
+			scope="session" />
+
+		<!-- Entites -->
+
+		<action path="/ListeDesEntites" type="scidy.actions.entites.Liste"
+			scope="session" />
+		<action path="/AjoutEntite" type="scidy.actions.entites.Ajout"
+			name="formEntite" />
+		<action path="/ModificationIntermediaireEntite" type="scidy.actions.entites.ModificationIntermediaire"
+			scope="session" input="/modifierEntite.jsp" name="formEntite" />
+		<action path="/ModificationEntite" type="scidy.actions.entites.Modification"
+			scope="session" name="formEntite" />
+		<action path="/SuppressionEntite" type="scidy.actions.entites.Suppression"
+			scope="session" />
+
+		<!-- Attributs -->
+
+		<action path="/AjoutAttribut" type="scidy.actions.attributs.Ajout"
+			name="formAttribut" />
+		<action path="/ListeDesAttributs" type="scidy.actions.attributs.Liste"
+			scope="session" />
+		<action path="/ModificationIntermediaireAttribut"
+			type="scidy.actions.attributs.ModificationIntermediaire" scope="session"
+			input="/modifierAttribut.jsp" name="formAttribut" />
+		<action path="/ModificationAttribut" type="scidy.actions.attributs.Modification"
+			scope="session" name="formAttribut" />
+		<action path="/SuppressionAttribut" type="scidy.actions.attributs.Suppression"
+			scope="session" />
+
+	</action-mappings>
+
+</struts-config>

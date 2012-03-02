@@ -1,0 +1,31 @@
+		<!-- ####	Action Mappings for {{Entite}}	#### -->
+		<action path="/add{{Entite}}" forward="/{{entite}}/formulaire.jsp" />
+		
+		<action path="/list{{Entite}}" type="defaultpackage.actions.{{entite}}.List{{Entite}}Action" name="formBean{{Entite}}"
+			scope="request" validate="false" attribute="bean" >
+			<forward name="list{{entite}}" path="/{{entite}}/index.jsp" />
+		</action>
+
+		<action path="/new{{Entite}}" name="formBean{{Entite}}"
+			type="defaultpackage.actions.{{entite}}.New{{Entite}}Action"  validate="true"
+			attribute="bean" input="/{{entite}}/formulaire.jsp"  scope="session">
+			<forward name="list{{entite}}" path="/list{{Entite}}.do" />
+		</action>
+
+		<action path="/delete{{Entite}}" type="defaultpackage.actions.{{entite}}.Delete{{Entite}}Action"
+			scope="request" validate="false" attribute="bean">
+			<forward name="list{{entite}}" path="/list{{Entite}}.do" />
+		</action>
+
+		<action path="/update{{Entite}}" name="formBean{{Entite}}"
+			type="defaultpackage.actions.{{entite}}.Update{{Entite}}Action"
+			validate="true" scope="session" input="/{{entite}}/modifier.jsp">
+			<forward name="list{{entite}}" path="/list{{Entite}}.do" />
+		</action>
+
+		<action path="/formUpdate{{Entite}}" type="defaultpackage.actions.{{entite}}.FormUpdate{{Entite}}Action"
+			validate="false" attribute="bean">
+			<forward name="list{{entite}}" path="/list{{Entite}}.do" />
+			<forward name="formUpdate{{entite}}" path="/{{entite}}/modifier.jsp" />
+		</action>
+		

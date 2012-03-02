@@ -1,0 +1,26 @@
+package defaultpackage.ejb;
+
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import defaultpackage.entities.{{Entite}};
+import defaultpackage.utils.AbstractFacade;
+
+/**
+ * Session Bean implementation class {{Entite}}Ejb
+ */
+@Stateless
+public class {{Entite}}EjbBean extends AbstractFacade<{{Entite}}> implements
+		{{Entite}}Ejb {
+	@PersistenceContext
+	private EntityManager em;
+
+	protected EntityManager getEntityManager() {
+		return em;
+	}
+
+	public {{Entite}}EjbBean() {
+		super({{Entite}}.class);
+	}
+}
